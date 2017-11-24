@@ -1,1 +1,1 @@
-# Coding-Practice
+# Repository for coding practice
