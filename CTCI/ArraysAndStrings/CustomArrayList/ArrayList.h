@@ -5,8 +5,8 @@
  *      Author: HemantKo
  */
 
-#ifndef ARRAYSANDSTRINGS_ARRAYLIST_ARRAYLIST_H_
-#define ARRAYSANDSTRINGS_ARRAYLIST_ARRAYLIST_H_
+#ifndef ARRAYSANDSTRINGS_CUSTOMARRAYLIST_ARRAYLIST_H_
+#define ARRAYSANDSTRINGS_CUSTOMARRAYLIST_ARRAYLIST_H_
 #include "../../StandardHeader.h"
 
 template<class T>
@@ -21,11 +21,13 @@ public:
 	void add(T element);
 	bool contains(T element);
 	T get(int index);
+	int indexOf(T element);
 	void print();
 	void remove(T element);
 	void removeAt(int index);
-	int search();
 	int size();
+	// To-Do: Revisit when sorting is covered
+	T* sort(T* _arrayList);
 };
 
-#endif /* ARRAYSANDSTRINGS_ARRAYLIST_ARRAYLIST_H_ */
+#endif /* ARRAYSANDSTRINGS_CUSTOMARRAYLIST_ARRAYLIST_H_ */
