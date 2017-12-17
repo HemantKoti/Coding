@@ -30,11 +30,12 @@ void StringBuilderTest() {
 }
 
 int main() {
-	ofstream errorLog("ErrorLogging/MyTrace.txt", ios_base::app | ios_base::out);
+	ofstream errorLog("ErrorLogging/MyTrace.txt",
+			ios_base::app | ios_base::out);
 	try {
 		ArrayListTest();
 		StringBuilderTest();
-	} catch(exception & ex) {
+	} catch (exception & ex) {
 		errorLog << ex.what() << endl;
 	}
 	return EXIT_SUCCESS;
