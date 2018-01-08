@@ -14,12 +14,12 @@ void ArrayListTest() {
 	ArrayList<int> alInt;
 	cout << "Integer Array List" << endl;
 	for (int i = 0; i < 10; i++) {
-		alInt.add(i + 1);
+		alInt.Add(i + 1);
 	}
-	alInt.remove(5);
-	alInt.removeAt(6);
-	cout << "Size = " << alInt.size() << endl;
-	alInt.print();
+	alInt.Remove(5);
+	alInt.RemoveAt(6);
+	cout << "Size = " << alInt.Size() << endl;
+	alInt.Print();
 }
 
 /*

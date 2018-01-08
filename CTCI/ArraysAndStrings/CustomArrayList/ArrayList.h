@@ -14,20 +14,20 @@ class ArrayList {
 private:
 	T* _arrayList;
 	int _defaultCapacity = 4;
-	int count = 0;
+	int _count = 0;
 public:
 	ArrayList();
 	ArrayList(int capacity);
-	void add(T element);
-	bool contains(T element);
-	T get(int index);
-	int indexOf(T element);
-	void print();
-	void remove(T element);
-	void removeAt(int index);
-	int size();
+	int Add(T element);
+	bool Contains(T element);
+	T Get(int index);
+	int IndexOf(T element);
+	void Print();
+	void Remove(T element);
+	void RemoveAt(int index);
+	int Size();
 	// To-Do: Revisit when sorting is covered
-	T* sort(T* _arrayList);
+	T* Sort(T* _arrayList);
 };
 
 #endif /* ARRAYSANDSTRINGS_CUSTOMARRAYLIST_ARRAYLIST_H_ */
