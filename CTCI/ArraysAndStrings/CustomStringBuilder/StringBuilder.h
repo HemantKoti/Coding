@@ -11,7 +11,7 @@
 
 class StringBuilder {
 private:
-	char _stringBuilder[];
+	char* _stringBuilder;
 	int _defaultCapacity = 4;
 	int _count = 0;
 public:

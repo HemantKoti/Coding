@@ -26,7 +26,7 @@ ArrayList<T>::ArrayList() {
 template<class T>
 ArrayList<T>::ArrayList(int capacity) {
 	_arrayList = new T[capacity];
-	_count = capacity;
+	_defaultCapacity = capacity;
 }
 
 /*
@@ -39,10 +39,13 @@ int ArrayList<T>::Add(T element) {
 	} else {
 		_defaultCapacity = _count * 2;
 		T* _arrayListTemp = new T[_defaultCapacity];
+
 		memcpy(_arrayListTemp, _arrayList, _count * sizeof(T));
 		_arrayListTemp[_count++] = element;
+
 		delete[] _arrayList;
 		_arrayList = _arrayListTemp;
+		delete[] _arrayListTemp;
 	}
 	return _count - 1;
 }
@@ -74,7 +77,7 @@ T ArrayList<T>::Get(int index) {
  */
 template<class T>
 int ArrayList<T>::IndexOf(T element) {
-	assert(contains(element) && "Element not found to remove");
+	assert(Contains(element) && "Element not found to remove");
 	for (int i = 0; i < _count; i++) {
 		if (_arrayList[i] == element) {
 			return i;
@@ -88,8 +91,8 @@ int ArrayList<T>::IndexOf(T element) {
  */
 template<class T>
 void ArrayList<T>::Remove(T element) {
-	assert(contains(element) && "Element not found to remove");
-	int index = indexOf(element);
+	assert(Contains(element) && "Element not found to remove");
+	int index = IndexOf(element);
 	for (int i = index; i < _count - 1; i++) {
 		_arrayList[i] = _arrayList[i + 1];
 	}
