@@ -6,6 +6,7 @@
  */
 
 #include "ArraysAndStrings/CustomArrayList/ArrayList.h"
+#include "ArraysAndStrings/CustomStringBuilder/StringBuilder.h"
 
 /*
  * Unit tests for Custom Array List implementation
@@ -26,14 +27,17 @@ void ArrayListTest() {
  * Unit tests for Custom String Builder implementation
  */
 void StringBuilderTest() {
-
+	StringBuilder str;
+	bool flag = true;
+	str.Append(flag);
+	cout << str.ToString() << endl;
 }
 
 int main() {
 	ofstream errorLog("ErrorLogging/MyTrace.txt",
 			ios_base::app | ios_base::out);
 	try {
-		ArrayListTest();
+		//ArrayListTest();
 		StringBuilderTest();
 	} catch (exception & ex) {
 		errorLog << ex.what() << endl;

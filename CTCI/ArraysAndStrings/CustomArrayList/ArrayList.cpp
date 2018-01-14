@@ -25,6 +25,8 @@ ArrayList<T>::ArrayList() {
  */
 template<class T>
 ArrayList<T>::ArrayList(int capacity) {
+	assert(capacity < 1 && capacity > INT_MAX - 1 && "Invalid Capacity");
+	capacity = min(capacity, _defaultCapacity);
 	_arrayList = new T[capacity];
 	_defaultCapacity = capacity;
 }

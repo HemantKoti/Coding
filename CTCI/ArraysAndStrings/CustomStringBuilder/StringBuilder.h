@@ -17,7 +17,7 @@ private:
 public:
 	StringBuilder();
 	StringBuilder(int capacity);
-	StringBuilder Append(bool flag);
+	StringBuilder* Append(bool flag);
 	StringBuilder Append(char ch);
 	StringBuilder Append(char ch, int repeatCount);
 	StringBuilder Append(char charArray[]);
@@ -33,7 +33,7 @@ public:
 	StringBuilder Insert(int index, string str);
 	StringBuilder Remove(int startIndex, int length);
 	StringBuilder RemoveAt(int index);
-	string ToString();
+	char* ToString();
 	int Length();
 };
 
