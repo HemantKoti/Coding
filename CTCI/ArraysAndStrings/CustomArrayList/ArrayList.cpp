@@ -5,7 +5,7 @@
  *      Author: HemantKo
  */
 
-#include "../CustomArrayList/ArrayList.h"
+#include "ArrayList.h"
 
 template class ArrayList<int> ;
 template class ArrayList<float> ;

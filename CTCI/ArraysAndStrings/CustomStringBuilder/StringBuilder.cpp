@@ -5,7 +5,7 @@
  *      Author: HemantKo
  */
 
-#include "../CustomStringBuilder/StringBuilder.h"
+#include "StringBuilder.h"
 
 /*
  * Creates a new instance of the StringBuilder class that is empty and has the default initial capacity of 4
