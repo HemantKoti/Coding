@@ -17,7 +17,7 @@ private:
 public:
 	StringBuilder();
 	StringBuilder(int capacity);
-	StringBuilder* Append(bool flag);
+	StringBuilder Append(bool flag);
 	StringBuilder Append(char ch);
 	StringBuilder Append(char ch, int repeatCount);
 	StringBuilder Append(char charArray[]);

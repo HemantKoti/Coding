@@ -21,13 +21,15 @@ ArrayList<T>::ArrayList() {
 }
 
 /*
- * Creates a new instance of the ArrayList class that has a custom capacity
+ * Creates a new instance of the ArrayList class with a custom capacity
  */
 template<class T>
 ArrayList<T>::ArrayList(int capacity) {
 	assert(capacity < 1 && capacity > INT_MAX - 1 && "Invalid Capacity");
-	capacity = min(capacity, _defaultCapacity);
+
 	_arrayList = new T[capacity];
+
+	// Set the default capacity with newly assigned size
 	_defaultCapacity = capacity;
 }
 
@@ -36,10 +38,13 @@ ArrayList<T>::ArrayList(int capacity) {
  */
 template<class T>
 int ArrayList<T>::Add(T element) {
+
+	/* Check if the current count value is less than the allocated size of the ArrayList
+	* If not increase the size of the ArrayList by 2 and resize the ArrayList */
 	if (_count < _defaultCapacity) {
 		_arrayList[_count++] = element;
 	} else {
-		_defaultCapacity = _count * 2;
+		_defaultCapacity = _defaultCapacity * 2;
 		T* _arrayListTemp = new T[_defaultCapacity];
 
 		memcpy(_arrayListTemp, _arrayList, _count * sizeof(T));
@@ -49,6 +54,7 @@ int ArrayList<T>::Add(T element) {
 		_arrayList = _arrayListTemp;
 		delete[] _arrayListTemp;
 	}
+
 	return _count - 1;
 }
 

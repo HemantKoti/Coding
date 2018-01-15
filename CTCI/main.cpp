@@ -27,18 +27,18 @@ void ArrayListTest() {
  * Unit tests for Custom String Builder implementation
  */
 void StringBuilderTest() {
-	StringBuilder str;
+	StringBuilder str(10);
 	bool flag = true;
-	str.Append(flag);
-	cout << str.ToString() << endl;
+	// str.Append(flag);
+	cout << str.ToString() << endl << "And has a size of: " << str.Length() << endl;
 }
 
 int main() {
 	ofstream errorLog("ErrorLogging/MyTrace.txt",
 			ios_base::app | ios_base::out);
 	try {
-		//ArrayListTest();
-		StringBuilderTest();
+		ArrayListTest();
+		//StringBuilderTest();
 	} catch (exception & ex) {
 		errorLog << ex.what() << endl;
 	}
