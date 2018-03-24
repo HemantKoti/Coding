@@ -13,8 +13,8 @@ template<class T>
 class ArrayList {
 private:
 	T* _arrayList;
-	int _defaultCapacity = 4;
-	int _count = 0;
+	static int _defaultCapacity;
+	int _size = 0;
 public:
 	ArrayList();
 	ArrayList(int capacity);

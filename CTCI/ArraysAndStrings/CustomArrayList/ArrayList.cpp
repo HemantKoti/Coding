@@ -12,6 +12,9 @@ template class ArrayList<float> ;
 template class ArrayList<double> ;
 template class ArrayList<string> ;
 
+template<class T>
+int ArrayList<T>::_defaultCapacity = 4;
+
 /*
  * Creates a new instance of the ArrayList class that is empty and has the default initial capacity of 4
  */
@@ -41,21 +44,21 @@ int ArrayList<T>::Add(T element) {
 
 	/* Check if the current count value is less than the allocated size of the ArrayList
 	* If not increase the size of the ArrayList by 2 and resize the ArrayList */
-	if (_count < _defaultCapacity) {
-		_arrayList[_count++] = element;
+	if (_size < _defaultCapacity) {
+		_arrayList[_size++] = element;
 	} else {
 		_defaultCapacity = _defaultCapacity * 2;
 		T* _arrayListTemp = new T[_defaultCapacity];
 
-		memcpy(_arrayListTemp, _arrayList, _count * sizeof(T));
-		_arrayListTemp[_count++] = element;
+		memcpy(_arrayListTemp, _arrayList, _size * sizeof(T));
+		_arrayListTemp[_size++] = element;
 
 		delete[] _arrayList;
 		_arrayList = _arrayListTemp;
 		delete[] _arrayListTemp;
 	}
 
-	return _count - 1;
+	return _size - 1;
 }
 
 /*
@@ -63,7 +66,7 @@ int ArrayList<T>::Add(T element) {
  */
 template<class T>
 bool ArrayList<T>::Contains(T element) {
-	for (int i = 0; i < _count; i++) {
+	for (int i = 0; i < _size; i++) {
 		if (_arrayList[i] == element) {
 			return true;
 		}
@@ -76,7 +79,7 @@ bool ArrayList<T>::Contains(T element) {
  */
 template<class T>
 T ArrayList<T>::Get(int index) {
-	assert(_count > index && "Invalid index");
+	assert(_size > index && "Invalid index");
 	return _arrayList[index];
 }
 
@@ -86,7 +89,7 @@ T ArrayList<T>::Get(int index) {
 template<class T>
 int ArrayList<T>::IndexOf(T element) {
 	assert(Contains(element) && "Element not found to remove");
-	for (int i = 0; i < _count; i++) {
+	for (int i = 0; i < _size; i++) {
 		if (_arrayList[i] == element) {
 			return i;
 		}
@@ -101,10 +104,10 @@ template<class T>
 void ArrayList<T>::Remove(T element) {
 	assert(Contains(element) && "Element not found to remove");
 	int index = IndexOf(element);
-	for (int i = index; i < _count - 1; i++) {
+	for (int i = index; i < _size - 1; i++) {
 		_arrayList[i] = _arrayList[i + 1];
 	}
-	_arrayList[--_count] = (T) 0;
+	_arrayList[--_size] = (T) 0;
 }
 
 /*
@@ -112,11 +115,11 @@ void ArrayList<T>::Remove(T element) {
  */
 template<class T>
 void ArrayList<T>::RemoveAt(int index) {
-	assert(index >= 0 && _count > index && "Invalid index");
-	for (int i = index; i < _count - 1; i++) {
+	assert(index >= 0 && _size > index && "Invalid index");
+	for (int i = index; i < _size - 1; i++) {
 		_arrayList[i] = _arrayList[i + 1];
 	}
-	_arrayList[--_count] = (T) 0;
+	_arrayList[--_size] = (T) 0;
 }
 
 /*
@@ -124,8 +127,8 @@ void ArrayList<T>::RemoveAt(int index) {
  */
 template<class T>
 void ArrayList<T>::Print() {
-	assert(_count > 0 && "Empty Array");
-	for (int i = 0; i < _count + 10; i++) {
+	assert(_size > 0 && "Empty Array");
+	for (int i = 0; i < _size + 10; i++) {
 		cout << _arrayList[i] << endl;
 	}
 }
@@ -135,6 +138,6 @@ void ArrayList<T>::Print() {
  */
 template<class T>
 int ArrayList<T>::Size() {
-	return _count;
+	return _size;
 }
 
