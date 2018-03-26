@@ -64,6 +64,7 @@ void swap(int *a, int *b);
 void MergeSort(vector<int> &A);
 void QuickSort(vector<int> &A, int start, int end);
 vector<Interval> insert(vector<Interval> &intervals, Interval newInterval);
+vector<Interval> merge(vector<Interval> &A);
 
 #pragma endregion methods
 
