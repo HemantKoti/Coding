@@ -7,12 +7,6 @@
 
 #include "../InterviewBit.h"
 
-bool doesIntersect(Interval a, Interval b) {
-	if (min(a.end, b.end) < max(a.start, b.start))
-		return false;
-	return true;
-}
-
 bool myCmp(Interval a, Interval b) {
 	return a.start < b.start;
 }

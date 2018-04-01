@@ -39,7 +39,7 @@ struct Interval {
 
 #pragma endregion structures
 
-#pragma region methods
+#pragma region Arrays
 
 vector<int> spiralOrder(const vector<vector<int> > &A);
 int overPoints(vector<int> &A, vector<int> &B);
@@ -65,7 +65,20 @@ void MergeSort(vector<int> &A);
 void QuickSort(vector<int> &A, int start, int end);
 vector<Interval> insert(vector<Interval> &intervals, Interval newInterval);
 vector<Interval> merge(vector<Interval> &A);
+string largestNumber(const vector<int> &A);
+int firstMissingPositive(vector<int> &A);
 
-#pragma endregion methods
+#pragma endregion Arrays
+
+#pragma region Math
+
+vector<int> allFactors(int A);
+string findDigitsInBinary(int A);
+vector<int> sieve(int A);
+int isPrime(int A);
+int isPalindrome(int A);
+int reverse(int A);
+
+#pragma endregion Math
 
 #endif /* INTERVIEWBIT_H_ */
