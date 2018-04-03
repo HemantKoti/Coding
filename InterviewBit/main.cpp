@@ -14,10 +14,7 @@ int main() {
 	try {
 		//int arr[] { 1, 2 , 3, 4 };
 		//vector<int> A(arr, arr + sizeof arr / sizeof arr[0]);
-		int A = 7;
-		vector<int> result = sieve(A);
-		for (int i = 0; i < result.size(); i++)
-			cout << result[i] << " ";
+		cout << gcd(350, 136);
 	} catch (exception & ex) {
 		errorLog << ex.what() << endl;
 	}

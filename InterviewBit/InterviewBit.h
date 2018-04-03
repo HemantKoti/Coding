@@ -78,6 +78,9 @@ vector<int> sieve(int A);
 int isPrime(int A);
 int isPalindrome(int A);
 int reverse(int A);
+int gcd(int A, int B);
+int trailingZeroes(int A);
+vector<string> fizzBuzz(int A);
 
 #pragma endregion Math
 
