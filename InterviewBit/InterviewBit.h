@@ -81,6 +81,10 @@ int reverse(int A);
 int gcd(int A, int B);
 int trailingZeroes(int A);
 vector<string> fizzBuzz(int A);
+int titleToNumber(string A);
+string convertToTitle(int A);
+uint64_t choose(int n, int r);
+int uniquePaths(int A, int B);
 
 #pragma endregion Math
 
