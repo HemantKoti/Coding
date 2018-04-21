@@ -85,7 +85,31 @@ int titleToNumber(string A);
 string convertToTitle(int A);
 uint64_t choose(int n, int r);
 int uniquePaths(int A, int B);
+void arrange(vector<int> &A);
 
 #pragma endregion Math
+
+#pragma region Binary Search
+
+int findCount(const vector<int> &A, int B);
+int binarySearch(vector<int> &A, int element);
+int findMin(const vector<int> &A);
+int pow(int x, int n, int d);
+int sqrt(int A);
+int searchInsert(vector<int> &A, int B);
+vector<int> searchRange(const vector<int> &A, int B);
+int search(const vector<int> &A, int B);
+double findMedianSortedArrays(const vector<int> &A, const vector<int> &B);
+
+#pragma endregion Binary Search
+
+#pragma region Recursion
+
+int factorial(int n);
+int fibonacci(int n);
+long long power(long long x, int n);
+long long modularExponentiation(long long x, int n, int m);
+
+#pragma endregion Recursion
 
 #endif /* INTERVIEWBIT_H_ */
