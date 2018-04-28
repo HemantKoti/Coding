@@ -17,24 +17,27 @@ typedef long long LL;
 
 class Kadan {
 public:
-	int l;
-	int r;
-	int max_sum;
+	int l, r, max_sum;
 	Kadan() {
 		l = r = -1;
 		max_sum = INT_MIN;
 	}
 };
 
-struct Interval {
-	int start;
-	int end;
+class Interval {
+public:
+	int start, end;
 	Interval() :
 			start(0), end(0) {
 	}
 	Interval(int s, int e) :
 			start(s), end(e) {
 	}
+};
+
+class Point {
+public:
+	int x, y;
 };
 
 #pragma endregion structures
@@ -86,6 +89,10 @@ string convertToTitle(int A);
 uint64_t choose(int n, int r);
 int uniquePaths(int A, int B);
 void arrange(vector<int> &A);
+string decimalToBinary(int A);
+double crossProduct(Point a, Point b);
+double areaOfPolygon(vector<Point> points);
+int getDirection(Point a, Point b, Point c);
 
 #pragma endregion Math
 
