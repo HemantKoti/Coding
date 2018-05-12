@@ -7,13 +7,6 @@
 
 #include "../InterviewBit.h"
 
-Point transformCoordinates(Point b, Point a) {
-	Point result;
-	result.x = b.x - a.x;
-	result.y = b.y - a.y;
-	return result;
-}
-
 int getDirection(Point a, Point b, Point c) {
 	enum Direction {
 		LEFT, RIGHT, ON_THE_LINE

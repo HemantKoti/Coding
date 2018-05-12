@@ -42,6 +42,20 @@ public:
 
 #pragma endregion structures
 
+#pragma Standard Algorithms
+
+#pragma endregion Standard Algorithms
+
+void SelectionSort(vector<int> &A);
+void BubbleSort(vector<int> &A);
+void InsertionSort(vector<int> &A);
+void swap(int *a, int *b);
+void MergeSort(vector<int> &A);
+void QuickSort(vector<int> &A, int start, int end);
+Kadan& kadan(vector<int> &arr);
+double crossProduct(Point a, Point b);
+Point transformCoordinates(Point b, Point a);
+
 #pragma region Arrays
 
 vector<int> spiralOrder(const vector<vector<int> > &A);
@@ -51,7 +65,6 @@ int maxSubArray(const vector<int> &A);
 int maxArr(vector<int> &A);
 vector<int> repeatedNumber(const vector<int> &A);
 vector<int> flip(string A);
-Kadan& kadan(vector<int> &arr);
 vector<int> maxset(vector<int> &A);
 vector<vector<int> > generateMatrix(int A);
 vector<vector<int> > generate(int A);
@@ -60,12 +73,6 @@ vector<vector<int> > diagonal(vector<vector<int> > &A);
 int solve(vector<int> &A);
 vector<int> wave(vector<int> &A);
 int findDuplicateInArray(const vector<int> &A);
-void SelectionSort(vector<int> &A);
-void BubbleSort(vector<int> &A);
-void InsertionSort(vector<int> &A);
-void swap(int *a, int *b);
-void MergeSort(vector<int> &A);
-void QuickSort(vector<int> &A, int start, int end);
 vector<Interval> insert(vector<Interval> &intervals, Interval newInterval);
 vector<Interval> merge(vector<Interval> &A);
 string largestNumber(const vector<int> &A);
@@ -90,9 +97,9 @@ uint64_t choose(int n, int r);
 int uniquePaths(int A, int B);
 void arrange(vector<int> &A);
 string decimalToBinary(int A);
-double crossProduct(Point a, Point b);
 double areaOfPolygon(vector<Point> points);
 int getDirection(Point a, Point b, Point c);
+int solve(vector<int> &A, int B, int C);
 
 #pragma endregion Math
 
@@ -118,5 +125,20 @@ long long power(long long x, int n);
 long long modularExponentiation(long long x, int n, int m);
 
 #pragma endregion Recursion
+
+#pragma region Bit Manipulation
+
+bool checkIfKthBitIsSet(unsigned A, int K);
+unsigned setKthBit(unsigned A, int K);
+unsigned clearKthBit(unsigned A, int K);
+unsigned toggleKthBit(unsigned A, int K);
+unsigned getTwosComplement(unsigned A);
+unsigned isolateRightMostOneBit(unsigned A);
+unsigned isolateRightMostZeroBit(unsigned A);
+bool checkIfPowerOfTwo(unsigned A);
+int numSetBits(unsigned int A);
+unsigned reverse(unsigned int A);
+
+#pragma endregion Bit Manipulation
 
 #endif /* INTERVIEWBIT_H_ */

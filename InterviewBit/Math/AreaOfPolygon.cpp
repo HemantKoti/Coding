@@ -7,10 +7,6 @@
 
 #include "../InterviewBit.h"
 
-double crossProduct(Point a, Point b) {
-	return a.x * b.y - b.x * a.y;
-}
-
 double areaOfPolygon(vector<Point> points) {
 	double sum = 0.0;
 	for (int i = 0; i < points.size(); i++) {
