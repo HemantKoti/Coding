@@ -141,4 +141,14 @@ unsigned reverse(unsigned int A);
 
 #pragma endregion Bit Manipulation
 
+#pragma region Two Pointers
+
+void merge(vector<int> &A, vector<int> &B);
+vector<int> intersect(const vector<int> &A, const vector<int> &B);
+int removeDuplicates(vector<int> &A);
+int removeDuplicatesII(vector<int> &A);
+int removeElement(vector<int> &A, int B);
+
+#pragma endregion Two Pointers
+
 #endif /* INTERVIEWBIT_H_ */
