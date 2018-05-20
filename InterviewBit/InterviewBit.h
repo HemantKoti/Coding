@@ -40,6 +40,12 @@ public:
 	int x, y;
 };
 
+typedef struct LLNode LLNode;
+struct LLNode {
+	int data;
+	LLNode* next;
+};
+
 #pragma endregion structures
 
 #pragma Standard Algorithms
@@ -114,6 +120,7 @@ int searchInsert(vector<int> &A, int B);
 vector<int> searchRange(const vector<int> &A, int B);
 int search(const vector<int> &A, int B);
 double findMedianSortedArrays(const vector<int> &A, const vector<int> &B);
+int paint(int A, int B, vector<int> &C);
 
 #pragma endregion Binary Search
 
@@ -150,5 +157,18 @@ int removeDuplicatesII(vector<int> &A);
 int removeElement(vector<int> &A, int B);
 
 #pragma endregion Two Pointers
+
+#pragma region Linked List
+
+LLNode* createNewNode(int data);
+void insertInTheBeginning(LLNode** headPtr, int data);
+void insertAfter(LLNode** headPtr, int data);
+void insertInTheEnd(LLNode** headPtr, int data);
+void deleteNodeKey(LLNode** headPtr, int data);
+void deleteNodePosition(LLNode** headPtr, int data);
+void deleteList(LLNode* head);
+void printList(LLNode* head);
+
+#pragma endregion Linked List
 
 #endif /* INTERVIEWBIT_H_ */
