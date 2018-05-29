@@ -168,6 +168,17 @@ void deleteNodeKey(LLNode** headPtr, int data);
 void deleteNodePosition(LLNode** headPtr, int data);
 void deleteList(LLNode* head);
 void printList(LLNode* head);
+int linkedListLengthIterative(LLNode* head);
+int linkedListLengthRecursive(LLNode* head);
+bool searchElementInListIterative(LLNode* head, int data);
+bool searchElementInListRecursive(LLNode* head, int data);
+int getNthNodeLinkedList(LLNode* head, int position);
+int getNthNodeFromEndLinkedList(LLNode* head, int position);
+void reverseLinkedList(LLNode** headPtr);
+int getMiddle(LLNode* head);
+void swapNodes(LLNode** headPtr, int x, int y);
+LLNode* detectLoop(LLNode* head);
+int countLoopNodes(LLNode* head);
 
 #pragma endregion Linked List
 

@@ -50,10 +50,10 @@ void printList(LLNode* head) {
 	cout << endl;
 }
 
-void deleteList(LLNode* head) {
-	while (head != NULL) {
-		LLNode* temp = head;
-		head = head->next;
+void deleteList(LLNode** head) {
+	while (*head != NULL) {
+		LLNode* temp = *head;
+		*head = (*head)->next;
 		free(temp);
 	}
 }
@@ -90,7 +90,8 @@ void deleteNodePosition(LLNode** headPtr, int position) {
 		return;
 	}
 
-	for (int i = 0; i < position - 1 && temp != NULL; i++, temp = temp->next);
+	for (int i = 0; i < position - 1 && temp != NULL; i++, temp = temp->next)
+		;
 
 	if (temp == NULL || temp->next == NULL)
 		return;
@@ -98,4 +99,79 @@ void deleteNodePosition(LLNode** headPtr, int position) {
 	LLNode* nextNode = temp->next->next;
 	free(temp->next);
 	temp->next = nextNode;
+}
+
+int linkedListLengthIterative(LLNode* head) {
+	int count = 0;
+	while (head != NULL) {
+		count++;
+		head = head->next;
+	}
+	return count;
+}
+
+int linkedListLengthRecursive(LLNode* head) {
+	if (head == NULL)
+		return 0;
+	return 1 + linkedListLengthRecursive(head->next);
+}
+
+bool searchElementInListIterative(LLNode* head, int data) {
+	while (head != NULL) {
+		if (head->data == data)
+			return true;
+		head = head->next;
+	}
+
+	return false;
+}
+
+bool searchElementInListRecursive(LLNode* head, int data) {
+	if (head == NULL)
+		return false;
+	else if (head->data == data)
+		return true;
+
+	return searchElementInListRecursive(head->next, data);
+}
+
+int getNthNodeLinkedList(LLNode* head, int position) {
+	int count = 0;
+	while (head != NULL) {
+		if (count == position)
+			return head->data;
+		head = head->next;
+		count++;
+	}
+
+	return -1;
+}
+
+int getNthNodeFromEndLinkedList(LLNode* head, int position) {
+
+	LLNode* temp = head;
+	for (int count = 0; head != NULL && count != position;
+			count++, head = head->next)
+		;
+
+	if (head == NULL)
+		return -1;
+
+	while (head != NULL) {
+		head = head->next;
+		temp = temp->next;
+	}
+
+	return temp->data;
+}
+
+void reverseLinkedList(LLNode** headPtr) {
+	LLNode* prev = NULL, *curr = *headPtr, *temp = *headPtr;
+	while (curr != NULL) {
+		temp = curr->next;
+		temp->next = prev;
+		prev = curr;
+		curr = temp;
+	}
+	*headPtr = prev;
 }
