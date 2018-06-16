@@ -15,7 +15,7 @@ int main() {
 		//int arr[] { 1, 2 , 3, 4 };
 		//vector<int> A(arr, arr + sizeof arr / sizeof arr[0]);
 
-		LLNode* head = NULL;
+		ListNode* head = NULL;
 		for (int i = 0; i < 10; i++)
 			insertInTheEnd(&head, i + 1);
 		printList(head);

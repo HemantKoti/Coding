@@ -7,9 +7,9 @@
 
 #include "../InterviewBit.h"
 
-int countLoopNodes(LLNode* head) {
+int countLoopNodes(ListNode* head) {
 	int count = 0;
-	LLNode* temp = detectLoop(head);
+	ListNode* temp = detectCycle(head);
 	if (temp == NULL)
 		return count;
 	while (temp == head) {

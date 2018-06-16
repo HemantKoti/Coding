@@ -7,14 +7,31 @@
 
 #include "../InterviewBit.h"
 
-LLNode* detectLoop(LLNode* head) {
-	LLNode* fast = head;
-	while (fast != NULL && fast->next != NULL) {
-		if (fast == head)
-			return head;
-		head = head->next;
-		fast = fast->next->next;
+ListNode* detectCycle(ListNode* head) {
+	if (head == NULL || head->next == NULL) {
+		return NULL;
 	}
 
-	return NULL;
+	ListNode* slow = head, *fast = head;
+
+	while (slow != NULL && fast != NULL) {
+		slow = slow->next;
+		if (fast->next != NULL)
+			fast = (fast->next)->next;
+		else
+			return NULL;
+		if (slow == fast)
+			break;
+	}
+
+	if (slow == NULL || fast == NULL) {
+		return NULL;
+	}
+
+	while (head != slow) {
+		head = head->next;
+		slow = slow->next;
+	}
+
+	return head;
 }

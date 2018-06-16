@@ -40,10 +40,10 @@ public:
 	int x, y;
 };
 
-typedef struct LLNode LLNode;
-struct LLNode {
-	int data;
-	LLNode* next;
+typedef struct ListNode ListNode;
+struct ListNode {
+	int val;
+	ListNode* next;
 };
 
 #pragma endregion structures
@@ -160,25 +160,26 @@ int removeElement(vector<int> &A, int B);
 
 #pragma region Linked List
 
-LLNode* createNewNode(int data);
-void insertInTheBeginning(LLNode** headPtr, int data);
-void insertAfter(LLNode** headPtr, int data);
-void insertInTheEnd(LLNode** headPtr, int data);
-void deleteNodeKey(LLNode** headPtr, int data);
-void deleteNodePosition(LLNode** headPtr, int data);
-void deleteList(LLNode* head);
-void printList(LLNode* head);
-int linkedListLengthIterative(LLNode* head);
-int linkedListLengthRecursive(LLNode* head);
-bool searchElementInListIterative(LLNode* head, int data);
-bool searchElementInListRecursive(LLNode* head, int data);
-int getNthNodeLinkedList(LLNode* head, int position);
-int getNthNodeFromEndLinkedList(LLNode* head, int position);
-void reverseLinkedList(LLNode** headPtr);
-int getMiddle(LLNode* head);
-void swapNodes(LLNode** headPtr, int x, int y);
-LLNode* detectLoop(LLNode* head);
-int countLoopNodes(LLNode* head);
+ListNode* createNewNode(int data);
+void insertInTheBeginning(ListNode** headPtr, int data);
+void insertAfter(ListNode** headPtr, int data);
+void insertInTheEnd(ListNode** headPtr, int data);
+void deleteNodeKey(ListNode** headPtr, int data);
+void deleteNodePosition(ListNode** headPtr, int data);
+void deleteList(ListNode* head);
+void printList(ListNode* head);
+int linkedListLengthIterative(ListNode* head);
+int linkedListLengthRecursive(ListNode* head);
+bool searchElementInListIterative(ListNode* head, int data);
+bool searchElementInListRecursive(ListNode* head, int data);
+int getNthNodeLinkedList(ListNode* head, int position);
+int getNthNodeFromEndLinkedList(ListNode* head, int position);
+void reverseLinkedList(ListNode** headPtr);
+ListNode* getMiddle(ListNode* head);
+void swapNodes(ListNode** headPtr, int x, int y);
+int countLoopNodes(ListNode* head);
+ListNode* detectCycle(ListNode* head);
+ListNode* getIntersectionNode(ListNode* A, ListNode* B);
 
 #pragma endregion Linked List
 

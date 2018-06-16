@@ -7,23 +7,23 @@
 
 #include "../InterviewBit.h"
 
-void swapNodes(LLNode** headPtr, int x, int y) {
+void swapNodes(ListNode** headPtr, int x, int y) {
 	if (!searchElementInListIterative(*headPtr, x)
 			|| !searchElementInListIterative(*headPtr, y))
 		return;
 
-	LLNode* tempX = *headPtr, *tempY = *headPtr, *prevX = *headPtr, *prevY =
+	ListNode* tempX = *headPtr, *tempY = *headPtr, *prevX = *headPtr, *prevY =
 			*headPtr;
-	if (tempX->data == x)
+	if (tempX->val == x)
 		prevX = NULL;
-	else if (tempX->data == y)
+	else if (tempX->val == y)
 		prevY = NULL;
 
-	for (; tempX != NULL && tempX->data != x;
+	for (; tempX != NULL && tempX->val != x;
 			prevX = tempX, tempX = tempX->next)
 		;
 
-	for (; tempY != NULL && tempY->data != y;
+	for (; tempY != NULL && tempY->val != y;
 			prevY = tempY, tempY = tempY->next)
 		;
 
@@ -38,9 +38,9 @@ void swapNodes(LLNode** headPtr, int x, int y) {
 		*headPtr = tempX;
 
 	// Swap next pointers
-	LLNode *temp = tempY->next;
+	ListNode *temp = tempY->next;
 	tempY->next = tempX->next;
 	tempX->next = temp;
 }
-}
+
 
