@@ -1,1 +1,2 @@
-# Repository for coding practice
+# Coding practice
+This repository contains coding challenges solved across various platforms.
