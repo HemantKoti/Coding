@@ -3,4 +3,4 @@
 2. Right click project, select Properties
 3. Go to C/C++ General - Paths and Symbols - Includes - GNU C++ - Include directories
 4. Select Add > Select Variables
-5. Select MINGW_HOME and click OK 
+5. Select MINGW_HOME and click OK
