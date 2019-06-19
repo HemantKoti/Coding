@@ -8,9 +8,7 @@
 #include "../InterviewBit.h"
 
 ListNode* createNewNode(int data) {
-	ListNode* temp = new ListNode;
-	temp->val = data;
-	temp->next = NULL;
+	ListNode* temp = new ListNode(data);
 	return temp;
 }
 
@@ -135,19 +133,19 @@ bool searchElementInListRecursive(ListNode* head, int data) {
 	return searchElementInListRecursive(head->next, data);
 }
 
-int getNthNodeLinkedList(ListNode* head, int position) {
+ListNode* getNthNodeLinkedList(ListNode* head, int position) {
 	int count = 0;
 	while (head != NULL) {
 		if (count == position)
-			return head->val;
+			return head;
 		head = head->next;
 		count++;
 	}
 
-	return -1;
+	return NULL;
 }
 
-int getNthNodeFromEndLinkedList(ListNode* head, int position) {
+ListNode* getNthNodeFromEndLinkedList(ListNode* head, int position) {
 
 	ListNode* temp = head;
 	for (int count = 0; head != NULL && count != position;
@@ -155,18 +153,18 @@ int getNthNodeFromEndLinkedList(ListNode* head, int position) {
 		;
 
 	if (head == NULL)
-		return -1;
+		return NULL;
 
 	while (head != NULL) {
 		head = head->next;
 		temp = temp->next;
 	}
 
-	return temp->val;
+	return temp;
 }
 
 void reverseLinkedList(ListNode** headPtr) {
-    ListNode *prev = NULL, *curr = *headPtr, *next;
+	ListNode *prev = NULL, *curr = *headPtr, *next;
 	while (curr != NULL) {
 		next = curr->next;
 		curr->next = prev;
@@ -174,4 +172,11 @@ void reverseLinkedList(ListNode** headPtr) {
 		curr = next;
 	}
 	*headPtr = prev;
+}
+
+int listLength(ListNode* head) {
+	int count;
+	for (count = 0; head != NULL; head = head->next, count++)
+		;
+	return count;
 }

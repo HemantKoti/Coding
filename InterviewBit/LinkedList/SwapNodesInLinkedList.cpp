@@ -16,15 +16,13 @@ void swapNodes(ListNode** headPtr, int x, int y) {
 			*headPtr;
 	if (tempX->val == x)
 		prevX = NULL;
-	else if (tempX->val == y)
+	else if (tempY->val == y)
 		prevY = NULL;
 
-	for (; tempX != NULL && tempX->val != x;
-			prevX = tempX, tempX = tempX->next)
+	for (; tempX != NULL && tempX->val != x; prevX = tempX, tempX = tempX->next)
 		;
 
-	for (; tempY != NULL && tempY->val != y;
-			prevY = tempY, tempY = tempY->next)
+	for (; tempY != NULL && tempY->val != y; prevY = tempY, tempY = tempY->next)
 		;
 
 	if (prevX != NULL)
@@ -42,5 +40,4 @@ void swapNodes(ListNode** headPtr, int x, int y) {
 	tempY->next = tempX->next;
 	tempX->next = temp;
 }
-
 

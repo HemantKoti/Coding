@@ -44,6 +44,9 @@ typedef struct ListNode ListNode;
 struct ListNode {
 	int val;
 	ListNode* next;
+	ListNode(int x) :
+			val(x), next(NULL) {
+	}
 };
 
 #pragma endregion structures
@@ -172,14 +175,24 @@ int linkedListLengthIterative(ListNode* head);
 int linkedListLengthRecursive(ListNode* head);
 bool searchElementInListIterative(ListNode* head, int data);
 bool searchElementInListRecursive(ListNode* head, int data);
-int getNthNodeLinkedList(ListNode* head, int position);
-int getNthNodeFromEndLinkedList(ListNode* head, int position);
+ListNode* getNthNodeLinkedList(ListNode* head, int position);
+ListNode* getNthNodeFromEndLinkedList(ListNode* head, int position);
 void reverseLinkedList(ListNode** headPtr);
 ListNode* getMiddle(ListNode* head);
 void swapNodes(ListNode** headPtr, int x, int y);
 int countLoopNodes(ListNode* head);
 ListNode* detectCycle(ListNode* head);
 ListNode* getIntersectionNode(ListNode* A, ListNode* B);
+ListNode* reverseBetween(ListNode* head, int B, int C);
+ListNode* reorderList(ListNode* head);
+ListNode* deleteDuplicates(ListNode* A);
+ListNode* deleteDuplicatesII(ListNode* A);
+ListNode* rotateRight(ListNode* A, int B);
+int listLength(ListNode* head);
+ListNode* removeNthFromEnd(ListNode* A, int B);
+ListNode* swapPairs(ListNode* A);
+string findPhoneNumber(string str);
+int lPalin(ListNode* A);
 
 #pragma endregion Linked List
 

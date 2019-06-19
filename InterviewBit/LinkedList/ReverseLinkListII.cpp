@@ -18,21 +18,21 @@ ListNode* reverseLinkedList(ListNode *headPtr) {
 	return prev;
 }
 
-ListNode* reverseBetween(ListNode* head, int B, int C) {
-	if (head == NULL || head->next == NULL || B == C)
-		return head;
+ListNode* reverseBetween(ListNode* A, int B, int C) {
+	if (A == NULL || A->next == NULL || B == C)
+		return A;
 
-	ListNode *original = head, *revStart = NULL, *revStart_prev = NULL,
+	ListNode *oHead = A, *revStart = NULL, *revStart_prev = NULL,
 			*revEnd = NULL, *revEnd_next = NULL;
 
-	for (int i = 1; i <= C && head != NULL; head = head->next, i++) {
+	for (int i = 1; i <= C && A != NULL; A = A->next, i++) {
 		if (i < B)
-			revStart_prev = head;
+			revStart_prev = A;
 		else if (i == B)
-			revStart = head;
+			revStart = A;
 		else if (i == C) {
-			revEnd = head;
-			revEnd_next = head->next;
+			revEnd = A;
+			revEnd_next = A->next;
 		}
 	}
 
@@ -42,9 +42,9 @@ ListNode* reverseBetween(ListNode* head, int B, int C) {
 	if (revStart_prev != NULL)
 		revStart_prev->next = revEnd;
 	else
-		original = revEnd;
+		oHead = revEnd;
 
 	revStart->next = revEnd_next;
-	return original;
+	return oHead;
 }
 
