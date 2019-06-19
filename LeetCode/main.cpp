@@ -6,10 +6,15 @@
 // Description : Hello World in C++, ANSI-style
 //============================================================================
 
-#include <iostream>
+#include "LeetCode.h"
 using namespace std;
 
 int main() {
-	cout << "Hello World" << endl; // prints Hello World
-	return 0;
+	ofstream errorLog("Logging/trace.log",
+			ios_base::app | ios_base::out);
+	try {
+		// Write logic here
+	} catch (exception & ex) {
+		errorLog << ex.what() << endl;
+	}
 }
