@@ -8,7 +8,7 @@
 #include "../InterviewBit.h"
 
 int searchInsert(vector<int> &A, int B) {
-   	int start = 0, end = A.size() - 1;
+	int start = 0, end = A.size() - 1;
 	while (start <= end) {
 		int mid = start + (end - start) / 2;
 		if (B == A[mid])

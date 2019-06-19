@@ -41,7 +41,8 @@ double findMedianSortedArrays(const vector<int> &A, const vector<int> &B) {
 				if ((A.size() + B.size()) & 1)
 					return max(maxLeftA, maxLeftB);
 				else
-					return (max(maxLeftA, maxLeftB) + min(minRightA, minRightB)) / 2;
+					return (max(maxLeftA, maxLeftB) + min(minRightA, minRightB))
+							/ 2;
 			} else if (maxLeftA > minRightB) { // The partitionA is too much to the right, go left
 				end = partitionA - 1;
 			} else

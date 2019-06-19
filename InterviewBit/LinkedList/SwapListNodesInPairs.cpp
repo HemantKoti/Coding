@@ -7,7 +7,8 @@
 
 #include "../InterviewBit.h"
 
-void swapPairsUtils(ListNode** A, ListNode *X, ListNode *Y, ListNode* prevX, ListNode* prevY) {
+void swapPairsUtils(ListNode** A, ListNode *X, ListNode *Y, ListNode* prevX,
+		ListNode* prevY) {
 	if (prevX != NULL)
 		prevX->next = Y;
 	else

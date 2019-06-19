@@ -8,9 +8,9 @@
 #include "../InterviewBit.h"
 
 int trailingZeroes(int A) {
-   int trailZeroes = 0;
-   for (int i = 1; A / pow(5, i); trailZeroes += A / pow(5, i), i++);
-   return trailZeroes;
+	int trailZeroes = 0;
+	for (int i = 1; A / pow(5, i); trailZeroes += A / pow(5, i), i++)
+		;
+	return trailZeroes;
 }
-
 

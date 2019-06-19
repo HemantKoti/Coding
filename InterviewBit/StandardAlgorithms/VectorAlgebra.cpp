@@ -18,4 +18,3 @@ Point transformCoordinates(Point b, Point a) {
 	return result;
 }
 
-

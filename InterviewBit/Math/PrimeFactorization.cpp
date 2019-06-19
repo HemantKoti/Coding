@@ -9,7 +9,7 @@
 
 map<int, int> primeFactorization(int A) {
 	map<int, int> primeFactors;
-	for (int i = 2; i <= sqrt(A); i++){
+	for (int i = 2; i <= sqrt(A); i++) {
 		int frequency = 0;
 		while (A % i == 0) {
 			A /= i;

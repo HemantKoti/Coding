@@ -10,7 +10,7 @@
 bool myCmp(int x, int y) {
 	string a = to_string(x);
 	string b = to_string(y);
-    return a + b > b + a;
+	return a + b > b + a;
 }
 
 string largestNumber(const vector<int> &A) {

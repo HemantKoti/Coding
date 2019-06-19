@@ -27,7 +27,6 @@ int isPalindrome(int A) {
 	return temp == reverse ? 1 : 0;
 }
 
-
 //int isPalindrome(int A) {
 //    string str = to_string(A);
 //    for (int i = 0, j = str.size() - 1; i <= j; i++, j--){

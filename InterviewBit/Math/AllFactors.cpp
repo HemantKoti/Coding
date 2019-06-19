@@ -21,4 +21,3 @@ vector<int> allFactors(int A) {
 	return result;
 }
 
-

@@ -18,4 +18,3 @@ string decimalToBinary(int A) {
 	return binary;
 }
 
-
