@@ -9,7 +9,7 @@
 #include "InterviewBit.h"
 
 int main() {
-	ofstream errorLog("ErrorLogging/MyTrace.txt",
+	ofstream errorLog("Logging/trace.log",
 			ios_base::app | ios_base::out);
 	try {
 		//int arr[] { 1, 2 , 3, 4 };
