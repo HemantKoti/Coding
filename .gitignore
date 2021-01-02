@@ -1,0 +1,8 @@
+# VS Code files
+.vscode
+
+# Ignore videos folder
+Videos
+
+# Ignore zip files
+*.zip

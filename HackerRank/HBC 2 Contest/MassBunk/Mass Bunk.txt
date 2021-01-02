@@ -1,0 +1,39 @@
+Mass Bunk
+
+Description :
+In JNTUH students have planned for mass bunk after a tiresome month of examinations. But the principal of the college is strict, he smartly assigned professors as guides for a set of students. His formula is simple, he ordered all the professors to monitor students who are present within a distance of 'K' from them. So students who are present within this 'K' distance cannot bunk the classes.
+You will be given names of the students who are connected with each other, as well as names of the professors who are connected with students.
+Your task is very simple, just print the names of all the students who can bunk the classes.
+It is assured that no two professors are connected to each other.
+(Hint : A professors' name starts with dr)
+
+Input Format : 
+First line contains two numbers N and K
+Now 'N' lines follow each line containing two names that are separated with certain delimiters.
+Note : The delimiters are " ,_." (excluding double quotes).
+
+Constraints : 
+1 <= N <= 20000
+2 <= length of name <= 20
+1 <= K <= 10
+Note : Names will only contain lowercase letters and numbers.
+
+Output Format : 
+Print the names of all the students who can mass bunk with spaces between them.
+If no one can bunk then print -1.
+Note : Start printing the names with the student whose name is added first and not within the range to any professor.
+
+Sample input : 
+4 2
+abhinay srikar
+srikar sourabh
+sourabh ashok
+ashok drsupreethi
+
+Sample output : 
+abhinay srikar
+
+Explanation : 
+Since drsupreethi is connected with ashok he cannot bunk.
+Since the given range of drsupreethi is 2, so sourabh who is connected with ashok cannot bunk as well.
+Now people who can bunk are abhinay and srikar, since abhinay is added first in the list, we start printing with abhinay.

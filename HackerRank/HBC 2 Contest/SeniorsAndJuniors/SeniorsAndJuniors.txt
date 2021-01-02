@@ -1,0 +1,38 @@
+Seniors and Juniors
+Description : 
+In a college festival seniors and juniors together have formed a long chain to show their unity and strength. But the most popular and important student in the college Mr.Sourabh Reddy couldnt stand this and wanted to split the chain, he thinks important people should stand first and hence he cleverly assigns different priorities(numbers) to all the students, now each time he picks a unique random number and asks all the students LESS THAN this number to form a chain in a decreasing order.
+Your task is to help sourabh in achieving his goal.
+For every random number that sourabh picks a new chain is formed. For 'M' random numbers M chains are formed.
+Total number of people in the college are N.
+
+Input Format : 
+First line contains two numbers N and M
+Second line contains N integers with priorities P(i) assigned to students arranged as a linked list.
+Third line contains M random numbers that sourabh announces.
+
+Constraints : 
+1 <= N <= 100000
+-1000000000 <= P(i) <= 1000000000
+1 <= M <= 9000
+
+Output Format : 
+For each random number M(i) print the chain of students less than M(i) in decreasing order, if there is no such random number then print -1.
+Each chain should be printed in a different line.
+
+Sample input : 
+6 2
+4 1 5 2 6 3
+3 5
+Sample Output:
+3 2 1
+5 4
+
+Explanation : 
+Sourabh starts checking the list for numbers less than 3, he finds 1 and adds to end of 3, he finds 2 since 2 is greater than 1, hence 1 is moved to end of the list.
+The first chain will be 3 2 1
+(Original List : 4 5 6)
+Now again Sourabh checks the list for numbers less than 5, he adds 4 to end of list.
+The second chain will be 5 4
+(Original List : 6)
+
+Note : Priorities assigned by sourabh are distinct.
