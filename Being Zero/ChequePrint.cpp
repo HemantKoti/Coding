@@ -18,8 +18,9 @@ void printTwoDigitNumbers(long n)
     int rem;
     assert(n < 100);
 
-    if (n < 20)
+    if (n < 20) {
         cout << numbers[n];
+    }
     else
     {
         rem = n % 10;
@@ -56,7 +57,7 @@ void numToWords(long int n)
             cout << " hundred ";
             n = n % 100;
         }
-        else if (n >= 10)
+        else
         {
             printTwoDigitNumbers(n);
             break;
@@ -64,6 +65,7 @@ void numToWords(long int n)
     }
 }
 
+// ../Materials/CPS - 2/Problem - 13 - Cheque Printing of Amount in Words.pdf
 int main()
 {
     long int num;
@@ -72,3 +74,4 @@ int main()
     numToWords(num);
     return 0;
 }
+w
