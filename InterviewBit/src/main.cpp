@@ -7,6 +7,7 @@
 //============================================================================
 
 #include "../include/interviewbit.h"
+#include "../../../include/global.h"
 
 int main()
 {

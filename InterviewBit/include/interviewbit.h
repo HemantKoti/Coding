@@ -66,8 +66,6 @@ struct ListNode
 
 #pragma Standard Algorithms
 
-#pragma endregion Standard Algorithms
-
 void SelectionSort(vector<int> &A);
 void BubbleSort(vector<int> &A);
 void InsertionSort(vector<int> &A);
@@ -77,6 +75,8 @@ void QuickSort(vector<int> &A, int start, int end);
 Kadan &kadan(vector<int> &arr);
 double crossProduct(Point a, Point b);
 Point transformCoordinates(Point b, Point a);
+
+#pragma endregion Standard Algorithms
 
 #pragma region Arrays
 
