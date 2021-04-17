@@ -3,54 +3,64 @@ using System.Collections.Generic;
 
 namespace BestSum
 {
+    // Time: O(target * target * n) and Space: O(target * target)
+    // n = numbers array length 
     class Program
     {
+        class TopDown
+        {
+            internal static List<int> BestSum(int target, List<int> numbers, Dictionary<int, List<int>> memo)
+            {
+                if (memo.ContainsKey(target))
+                    return memo[target];
+
+                if (target == 0)
+                    return new List<int>();
+
+                if (target < 0)
+                    return null;
+
+                List<int> shortestCombination = null;
+
+                for (int i = 0; i < numbers.Count; i++)
+                {
+                    int remainder = target - numbers[i];
+                    List<int> result = BestSum(remainder, numbers, memo);
+                    if (result != null)
+                    {
+                        result.Add(numbers[i]);
+
+                        if (shortestCombination == null || shortestCombination.Count > result.Count)
+                            shortestCombination = result;
+
+                        //memo[target] = shortestCombination;
+                        //return memo[target];
+                    }
+                }
+
+                memo[target] = shortestCombination;
+                return memo[target];
+            }
+        }
+
+        class BottomUp
+        {
+
+        }
+
         static void Main(string[] args)
         {
-            List<int> numbers = new List<int>() { 5, 4, 3, 7, 1, 2, 6 };
+            if (args is null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+
+            List<int> numbers = new List<int>() { 5, 6, 5, 1 };
             Dictionary<int, List<int>> memo = new Dictionary<int, List<int>>();
-            int target = 27;
+            int target = 11;
 
-            List<int> result = BestSum(target, numbers, memo);
-            if (result != null)
-            {
-                foreach (int _result in result)
-                    Console.Write(_result + " ");
-            }
-        }
-
-        private static List<int> BestSum(int target, List<int> numbers, Dictionary<int, List<int>> memo)
-        {
-            if (memo.ContainsKey(target))
-                return memo[target];
-
-            if (target == 0)
-                return new List<int>();
-
-            if (target < 0)
-                return null;
-
-            List<int> result = null;
-            List<int> shortestCombination = null;
-
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                int remainder = target - numbers[i];
-                result = BestSum(remainder, numbers, memo);
-                if (result != null)
-                {
-                    result.Add(numbers[i]);
-
-                    if (shortestCombination == null || shortestCombination.Count > result.Count)
-                        shortestCombination = result;
-
-                    memo[target] = result;
-                    return memo[target];
-                }
-            }
-
-            memo[target] = null;
-            return memo[target];
-        }
+            List<int> result = TopDown.BestSum(target, numbers, memo);
+            Console.WriteLine(string.Join(" ", result.ToArray()));
+        }       
     }
 }

@@ -3,23 +3,11 @@ using System.Collections.Generic;
 
 namespace HowSum
 {
-    class Program
+    // Time: O(target * target * n) and Space: O(target * target)
+    // n = numbers array length 
+    class TopDown
     {
-        static void Main(string[] args)
-        {
-            List<int> numbers = new List<int>() { 5, 4, 3, 7, 1, 2, 6 };
-            Dictionary<int, List<int>> memo = new Dictionary<int, List<int>>();
-            int target = 27;
-
-            List<int> result = HowSum(target, numbers, memo);
-            if (result != null)
-            {
-                foreach (int _result in result)
-                    Console.Write(_result + " ");
-            }
-        }
-
-        private static List<int> HowSum(int target, List<int> numbers, Dictionary<int, List<int>> memo)
+        internal static List<int> HowSum(int target, List<int> numbers, Dictionary<int, List<int>> memo)
         {
             if (memo.ContainsKey(target))
                 return memo[target];
@@ -44,8 +32,25 @@ namespace HowSum
                 }
             }
 
-            memo[target] = null;
+            memo[target] = result;
             return memo[target];
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            if (args is null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+
+            List<int> numbers = new List<int>() { 5, 4, 3, 7, 1, 2, 6 };
+            Dictionary<int, List<int>> memo = new Dictionary<int, List<int>>();
+            int target = 27;
+
+            Console.WriteLine(string.Join(" ", TopDown.HowSum(target, numbers, memo).ToArray()));
         }
     }
 }

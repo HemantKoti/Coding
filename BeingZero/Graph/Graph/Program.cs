@@ -51,7 +51,7 @@ namespace Graph
             }
         }
 
-        private void DFSUtil(int source, bool[] visited)
+        private void DFSRecursiveUtil(int source, bool[] visited)
         {
             visited[source] = true;
             Console.Write(source + " ");
@@ -60,14 +60,46 @@ namespace Graph
             foreach (int vertex in vertexList)
             {
                 if (!visited[vertex])
-                    DFSUtil(vertex, visited);
+                    DFSRecursiveUtil(vertex, visited);
             }
         }
 
-        public void DFS(int source)
+        public void DFSRecursive(int source)
         {
             bool[] visited = new bool[this.V];
-            DFSUtil(source, visited);
+            DFSRecursiveUtil(source, visited);
+        }
+
+        private void DFSIterativeUtil(int source, bool[] visited)
+        {
+            Stack<int> stack = new Stack<int>();
+
+            stack.Push(source);
+
+            while (stack.Count > 0)
+            {
+                source = stack.Pop();
+
+                if (!visited[source])
+                {
+                    Console.Write(source + " ");
+                    visited[source] = true;
+                }
+
+                foreach (int v in this.adjList[source])
+                {
+                    if (!visited[v])
+                        stack.Push(v);
+                }
+            }
+        }
+
+        public void DFSIterative(int source)
+        {
+            bool[] visited = new bool[this.V];
+            Array.Fill(visited, false);
+
+            DFSIterativeUtil(source, visited);
         }
     }
 
@@ -86,7 +118,12 @@ namespace Graph
 
             g.BFS(2);
             Console.WriteLine();
-            g.DFS(2);
+
+            g.DFSRecursive(2);
+            Console.WriteLine();
+
+            g.DFSIterative(2);
+            Console.WriteLine();
         }
     }
 }

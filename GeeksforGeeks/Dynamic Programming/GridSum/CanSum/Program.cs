@@ -3,18 +3,11 @@ using System.Collections.Generic;
 
 namespace CanSum
 {
-    class Program
+    // Time: O(target * n) and Space: O(target)
+    // n = numbers array length 
+    class TopDown
     {
-        static void Main(string[] args)
-        {
-            List<int> numbers = new List<int>() { 5, 4, 3, 7, 1, 2, 6 };
-            Dictionary<int, bool> memo = new Dictionary<int, bool>();
-            int target = 27;
-
-            Console.WriteLine(CanSum(target, numbers, memo));
-        }
-
-        private static bool CanSum(int target, List<int> numbers, Dictionary<int, bool> memo)
+        internal static bool CanSum(int target, List<int> numbers, Dictionary<int, bool> memo)
         {
             if (memo.ContainsKey(target))
                 return memo[target];
@@ -29,9 +22,35 @@ namespace CanSum
                 if (CanSum(target - numbers[i], numbers, memo))
                     return true;
 
-            memo.Add(target, false);
+            memo[target] = false;
+            return memo[target];
+        }
+    }
 
+    class BottomUp
+    {
+        internal static bool CanSum(int target, List<int> numbers, Dictionary<int, bool> memo) { 
+            
             return false;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            if (args is null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+
+            List<int> numbers = new List<int>() { 5, 4, 3, 7, 1, 2, 6 };
+            Dictionary<int, bool> memo = new Dictionary<int, bool>();
+            int target = 27;
+
+            Console.WriteLine(TopDown.CanSum(target, numbers, memo));
+
+            Console.WriteLine(BottomUp.CanSum(target, numbers, memo));
         }
     }
 }

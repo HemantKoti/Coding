@@ -20,6 +20,6 @@ vector<int> sieve(int A)
 	for (int i = 0; i < A + 1; i++)
 		if (isPrime[i])
 			primes.push_back(i);
-
+	
 	return primes;
 }
