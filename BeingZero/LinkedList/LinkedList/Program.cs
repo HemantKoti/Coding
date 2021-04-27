@@ -117,6 +117,21 @@ namespace LinkedList
             return last;
         }
 
+        internal ListNode LastNodeFromTail(int positionFromTail)
+        {
+            ListNode last = this.head, temp = this.head;
+            for (int i = 0; i < positionFromTail; i++)
+                last = last.next;
+
+            while (last != null)
+            {
+                temp = temp.next;
+                last = last.next;
+            }
+
+            return head;
+        }
+
         internal void DeleteNode(int data)
         {
             ListNode originalHead = this.head, prev = null;

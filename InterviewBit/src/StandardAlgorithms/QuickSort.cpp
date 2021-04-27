@@ -5,7 +5,7 @@
  *      Author: HemantKo
  */
 
-#include "../include/global.h"
+#include "../../include/interviewbit.h"
 
 int partition(vector<int> &A, int start, int end)
 {

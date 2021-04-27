@@ -5,7 +5,7 @@
  *      Author: HemantKo
  */
 
-#include "../include/global.h"
+#include "../../include/interviewbit.h"
 
 void SelectionSort(vector<int> &A)
 {
