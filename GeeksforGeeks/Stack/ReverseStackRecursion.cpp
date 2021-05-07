@@ -3,16 +3,26 @@
 
 using namespace std;
 
-void reverse(stack<int> &stack, int k) {
-    if (stack.size() == 1 || k == 1) {
-        stack.pop();
+void insert(stack<int> &stack, int element) {
+    if (stack.size() == 0) {
+        stack.push(element);
         return;
     }
+    
+    int top = stack.top();
+    stack.pop();
+    insert(stack, element);
+    stack.push(top);
+}
+
+void reverse(stack<int> &stack) {
+    if (stack.size() == 0) 
+        return;    
 
     int top = stack.top();
     stack.pop();
-    reverse(stack, k - 1);
-    stack.push(top);
+    reverse(stack);
+    insert(stack, top);
 }
 
 int main() {
@@ -23,8 +33,7 @@ int main() {
     stack.push(3);
     stack.push(0);
 
-    int k = stack.size() % 2 == 0 ? (stack.size() / 2) : (stack.size() / 2 + 1);
-    reverse(stack, k);
+    reverse(stack);
 
     while (!stack.empty()) {
         cout << stack.top() << " ";
