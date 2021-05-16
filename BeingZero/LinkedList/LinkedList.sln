@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\LinkedList.csproj", "{6738ABFE-ED6D-4D0B-BAD0-96E67061A713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircularLinkedList", "CircularLinkedList\CircularLinkedList.csproj", "{D7746672-A575-4B5B-B7BD-883ADE25EFE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CircularLinkedList", "CircularLinkedList\CircularLinkedList.csproj", "{D7746672-A575-4B5B-B7BD-883ADE25EFE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
