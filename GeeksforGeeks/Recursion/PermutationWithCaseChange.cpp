@@ -23,9 +23,9 @@ void permutationWithCaseChange(string input, string output)
 
 int main()
 {
-    string input("abc"); 
+    string input("abc");
     string output = "";
-    
+
     permutationWithCaseChange(input, output);
 
     return 0;

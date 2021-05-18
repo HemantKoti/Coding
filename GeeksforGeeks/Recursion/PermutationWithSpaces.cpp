@@ -22,7 +22,7 @@ void permutationWithCaseChange(string input, string output)
 
 int main()
 {
-    string input("Hemant"); 
+    string input("Hemant");
     string output;
     output += input[0];
 

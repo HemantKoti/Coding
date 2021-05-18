@@ -25,13 +25,13 @@ void NBitBinaryUtil(int N, int one, int zero, string output, vector<string> &res
 int main()
 {
     int N = 5;
-    
+
     vector<string> result;
     int zero = 0, one = 0;
     string output = "";
     NBitBinaryUtil(N, one, zero, output, result);
 
-    for (auto &x: result)
+    for (auto &x : result)
         cout << x << endl;
     return 0;
 }

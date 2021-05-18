@@ -8,7 +8,7 @@ void increment_base26(char s[], int len)
     while (i >= 0)
     {
         if (s[i] == 'z')
-            s[i] = 'a'; 
+            s[i] = 'a';
         else
         {
             s[i] += 1;
@@ -29,22 +29,22 @@ void reverse(char s[], int len)
     }
 }
 
-char* next_lexicographic_palindrome(char s[])
+char *next_lexicographic_palindrome(char s[])
 {
     int len = strlen(s);
     int half = len / 2;
     int half_plus_mid = half + (len % 2);
-    reverse(s, half); 
+    reverse(s, half);
     // printf("First reverse: %s\n", s);
 
     int cmp = strncmp(s, s + half_plus_mid, half);
     // printf("Compare: %d\n", cmp);
 
     if (cmp > 0)
-        memcpy(s + half_plus_mid, s, half); 
+        memcpy(s + half_plus_mid, s, half);
     // printf("First memcpy: %s\n", s);
 
-    reverse(s, half); 
+    reverse(s, half);
     // printf("Second reverse: %s\n", s);
 
     if (cmp >= 0)
@@ -52,7 +52,7 @@ char* next_lexicographic_palindrome(char s[])
         return s;
     }
 
-    increment_base26(s, half_plus_mid); 
+    increment_base26(s, half_plus_mid);
     // printf("First Increment base: %s\n", s);
 
     reverse(s, half);
@@ -67,7 +67,7 @@ char* next_lexicographic_palindrome(char s[])
     return s;
 }
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     char s[] = "cbaba";
     printf("Next Lexicographic Palindrome: %s\n", next_lexicographic_palindrome(s));

@@ -3,21 +3,24 @@
 
 using namespace std;
 
-void insert(stack<int> &stack, int element) {
-    if (stack.size() == 0) {
+void insert(stack<int> &stack, int element)
+{
+    if (stack.size() == 0)
+    {
         stack.push(element);
         return;
     }
-    
+
     int top = stack.top();
     stack.pop();
     insert(stack, element);
     stack.push(top);
 }
 
-void reverse(stack<int> &stack) {
-    if (stack.size() == 0) 
-        return;    
+void reverse(stack<int> &stack)
+{
+    if (stack.size() == 0)
+        return;
 
     int top = stack.top();
     stack.pop();
@@ -25,7 +28,8 @@ void reverse(stack<int> &stack) {
     insert(stack, top);
 }
 
-int main() {
+int main()
+{
     stack<int> stack;
     stack.push(2);
     stack.push(5);
@@ -35,10 +39,11 @@ int main() {
 
     reverse(stack);
 
-    while (!stack.empty()) {
+    while (!stack.empty())
+    {
         cout << stack.top() << " ";
         stack.pop();
     }
-    
+
     return 0;
 }

@@ -3,8 +3,10 @@
 
 using namespace std;
 
-void reverse(stack<int> &stack, int k) {
-    if (stack.size() == 1 || k == 1) {
+void reverse(stack<int> &stack, int k)
+{
+    if (stack.size() == 1 || k == 1)
+    {
         stack.pop();
         return;
     }
@@ -15,7 +17,8 @@ void reverse(stack<int> &stack, int k) {
     stack.push(top);
 }
 
-int main() {
+int main()
+{
     stack<int> stack;
     stack.push(2);
     stack.push(5);
@@ -26,10 +29,11 @@ int main() {
     int k = stack.size() % 2 == 0 ? (stack.size() / 2) : (stack.size() / 2 + 1);
     reverse(stack, k);
 
-    while (!stack.empty()) {
+    while (!stack.empty())
+    {
         cout << stack.top() << " ";
         stack.pop();
     }
-    
+
     return 0;
 }
