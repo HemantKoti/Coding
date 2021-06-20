@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Graph
+namespace Graph.Algorithms
 {
-    class Graph
+    internal class Graph
     {
-        private int V;
-        List<int>[] adjList;
+        public int V { get; set; }
+
+        public List<int>[] adjList { get; set; }
 
         public Graph(int V)
         {
@@ -70,7 +71,7 @@ namespace Graph
             DFSRecursiveUtil(source, visited);
         }
 
-        private void DFSIterativeUtil(int source, bool[] visited)   
+        private void DFSIterativeUtil(int source, bool[] visited)
         {
             Stack<int> stack = new Stack<int>();
 
@@ -103,27 +104,5 @@ namespace Graph
         }
     }
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Graph g = new Graph(4);
 
-            g.AddEdge(0, 1);
-            g.AddEdge(0, 2);
-            g.AddEdge(1, 2);
-            g.AddEdge(2, 0);
-            g.AddEdge(2, 3);
-            g.AddEdge(3, 3);
-
-            g.BFS(2);
-            Console.WriteLine();
-
-            g.DFSRecursive(2);
-            Console.WriteLine();
-
-            g.DFSIterative(2);
-            Console.WriteLine();
-        }
-    }
 }
